@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ma To-Do List 📚</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="header-top">
+        <span class="emoji-big">📚</span>
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Reste focus — reste organisé 🎯</p>
+      </div>
+     
+    </header>
+
+    <div class="add-section">
+      <input type="text" id="taskInput" placeholder="Ajouter une tâche..." />
+      <select id="categorySelect">
+        <option value="general">📌 Général</option>
+        <option value="cours">📖 Cours</option>
+        <option value="projet">💻 Projet </option>
+        <option value="urgent">🔥 Urgent</option>
+      </select>
+      <button id="addBtn" onclick="ajouterTache()">Ajouter</button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filtrer('toutes', this)">Toutes</button>
+      <button class="filter-btn" onclick="filtrer('actives', this)">À faire</button>
+      <button class="filter-btn" onclick="filtrer('faites', this)">Faites ✓</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="stats">
+      <span id="statsText">0 tâche(s)</span>
+      <button id="clearBtn" onclick="supprimerFaites()">🗑️ Supprimer les faites</button>
+    </div>
+
+    <div class="progress-section">
+      <label>Progression du projet JS</label>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+      <span id="progressText">0%</span>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
